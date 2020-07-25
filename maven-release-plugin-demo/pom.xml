@@ -2,10 +2,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.xiffox</groupId>
+
+	<parent>
+		<groupId>com.xiffox</groupId>
+		<artifactId>maven-plugins</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
 	<artifactId>maven-release-plugin-demo</artifactId>
-	<version>${global.version}</version>
 	
 	<description>Demonstration of release plugin of maven</description>
 	<packaging>pom</packaging>
