@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.xiffox</groupId>
+	<artifactId>maven-release-plugin-demo</artifactId>
+	<version>${global.version}</version>
+	
+	<description>Demonstration of release plugin of maven</description>
+	<packaging>pom</packaging>
+
+	<properties>
+		<global.version>1.0.0-SNAPSHOT</global.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<modules>
+		<module>demo-bom</module>
+		<module>demo-core</module>
+	</modules>
+	
+	<scm>
+		<connection>scm:git:git@github.com:xiffox/maven-release-plugin-demo.git</connection>
+		<developerConnection>scm:git:git@github.com/xiffox/maven-release-plugin-demo.git</developerConnection>
+		<url>https://github.com/xiffox/maven-release-plugin-demo</url>
+		<tag>@{project.version}</tag>
+	</scm>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- <dependency></dependency> -->
+		</dependencies>
+	</dependencyManagement>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<preparationGoals>package</preparationGoals>
+					<allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+					<tagNameFormat>@{project.version}</tagNameFormat>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin> -->
+		</plugins>
+	</build>
+
+</project>
